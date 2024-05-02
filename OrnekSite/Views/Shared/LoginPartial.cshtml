@@ -1,0 +1,29 @@
+﻿
+<ul class="nav pull-right">
+    @if (Request.IsAuthenticated) // kullanici sisteme giris yapar. eger admin ise admin ekranı degisle user ekranı
+    {
+        if (this.User.IsInRole("admin"))
+        {
+            <li><a href="/Product/Index" target="_blank"><span class="icon-user"></span>Admin Paneli</a></li>
+            // target ile yeni sekmede sayfa acma
+            <li><a href="/Account/UserProfile"><span class="icon-edit"></span>Profilim</a></li>
+            <li><a href="/Account/Index">Siparişlerim</a></li>
+            <li class="label-warning"><a href="/Account/LogOut"><span class="icon-remove"></span>Çıkış</a></li>
+        }
+        else // kullanıcı icin 
+        {
+            <li><a href="/Account/UserProfile"><span class="icon-edit"></span>Profilim</a></li>
+            <li><a href="/Account/Index">Siparişlerim</a></li>   //@User.Identity.Nam
+            <li class="label-warning"><a href="/Account/LogOut" style="color:white"><span class="icon-remove"></span>Çıkış</a></li>
+        }
+
+    }
+
+    else
+    {
+        <li class="label-warning"><a href="/Account/Register" style="color:white"><span class="icon-edit"></span>Kayıt Ol </a></li>
+        <li class="label-success"><a href="/Account/Login" style="color:white"><span class="icon-user"></span>Giriş</a></li>
+
+
+    }
+</ul>

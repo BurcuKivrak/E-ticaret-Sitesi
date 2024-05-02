@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Adres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div id="sidebar" class="span3">
+        <div class="well well-small">
+            <ul class="nav nav-list">
+                @Html.Action("_CategoryList", "Category")
+                <li style="border:0">&nbsp;</li>
+                @Html.Action("Summary", "Cart")
+            </ul>
+        </div>
+
+        @Html.Action("_FeaturedProductList", "Home")
+    </div>
+    <div class="span9">
+        <ul class="breadcrumb">
+            <li><a href="/Home/Index">Anasayfa</a> <span class="divider">/</span></li>
+            
+            <li class="active">Adres</li>
+        </ul>
+        <div class="well well-small">
+            <h4>Adres: Gazi Üniversitesi Mimarlık-Mühendislik Fakültesi, Maltepe/Ankara</h4>
+            <hr class="softn clr">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12237.773955436895!2d32.83766789196303!3d39.93146857240149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34efa2da0b52b%3A0x38e66b6eed79da54!2zVC5DLiBHQVrEsCDDnE7EsFZFUlPEsFRFU8SwIE3EsE1BUkxJSyBGQUvDnExURVPEsA!5e0!3m2!1str!2str!4v1641857138733!5m2!1str!2str" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+
